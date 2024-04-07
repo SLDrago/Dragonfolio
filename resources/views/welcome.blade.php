@@ -43,7 +43,7 @@
                     @if (Route::has('login'))
                         <nav class="-mx-3 flex flex-1 justify-end">
                             @auth
-                                <a href="{{ url('/dashboard') }}" class="">
+                                <a href="{{ url('/dashboard') }}" class="nav-link">
                                     Dashboard
                                 </a>
                             @else
@@ -312,97 +312,21 @@
             <div class="container mt-3">
                 <h1 class="text-center">Projects</h1>
                 <div class="row">
-                    <div class="col-lg-4 mt-4">
-                        <div class="card">
-                            <img class="card-img-top" src="images/portfolioImage1.jpg" alt="Card image"
-                                style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">YouTube Clone</h4>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry.</p>
-                                <div class="text-center">
-                                    <a href="#" class="btn btn-success">Link</a>
+                    @foreach ($projects as $project)
+                        <div class="col-lg-4 mt-4">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ $project->image_url }}" alt="Card image"
+                                    style="width:100%">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ $project->name }}</h4>
+                                    <p class="card-text">{{ $project->description }}</p>
+                                    <div class="text-center">
+                                        <a href="{{ $project->project_url }}" class="btn btn-success">Link</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="card portfolioContent">
-                            <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image"
-                                style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Quiz App</h4>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry.</p>
-                                <div class="text-center">
-                                    <a href="#" class="btn btn-success">Link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="card portfolioContent">
-                            <img class="card-img-top" src="images/portfolioImage3.jpg" alt="Card image"
-                                style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Product Landing Page</h4>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry.</p>
-                                <div class="text-center">
-                                    <a href="#" class="btn btn-success">Link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-lg-4 mt-4">
-                        <div class="card portfolioContent">
-                            <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image"
-                                style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Messaging Service</h4>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry.</p>
-                                <div class="text-center">
-                                    <a href="#" class="btn btn-success">Link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="card portfolioContent">
-                            <img class="card-img-top" src="images/portfolioImage1.jpg" alt="Card image"
-                                style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Twitter Clone</h4>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry.</p>
-                                <div class="text-center">
-                                    <a href="#" class="btn btn-success">Link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 mt-4">
-                        <div class="card portfolioContent">
-                            <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image"
-                                style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Blog App</h4>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry.</p>
-                                <div class="text-center">
-                                    <a href="#" class="btn btn-success">Link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
         </section>
         <section id="contact" class="section-hight d-flex justify-content-center align-items-center">
@@ -433,15 +357,18 @@
 
                     <div class="col-lg-6">
                         <!-- form fields -->
-                        <form>
-                            <input type="text" class="form-control form-control-lg" placeholder="Name">
-                            <input type="email" class="form-control mt-3" placeholder="Email">
-                            <input type="text" class="form-control mt-3" placeholder="Subject">
+                        <form action="/sendmail" method="post">
+                            @csrf
+                            <input type="text" class="form-control form-control-lg" placeholder="Name"
+                                name="name">
+                            <input type="email" class="form-control mt-3" placeholder="Email" name="email">
+                            <input type="text" class="form-control mt-3" placeholder="Subject" name="subject">
                             <div class="mb-3 mt-3">
-                                <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Project Details"></textarea>
+                                <textarea class="form-control" rows="5" id="comment" name="content" placeholder="Project Details"></textarea>
                             </div>
+                            <button type="submit" class="btn btn-success mt-3">Contact Me</button>
+
                         </form>
-                        <button type="button" class="btn btn-success mt-3">Contact Me</button>
 
                     </div>
 
