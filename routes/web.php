@@ -10,9 +10,7 @@ Route::get('/', [ProjectController::class, 'index']);
 
 Route::post('/sendmail', [ContactMeController::class, 'sendEmail'])->name('sendEmail');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [ProjectController::class, 'showProjects'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -23,6 +23,12 @@ class ProjectController extends Controller
         return view('welcome')->with($response);
     }
 
+    public function showProjects()
+    {
+        $projects = $this->project->all();
+        return view('/dashboard')->with('projects', $projects);
+    }
+
     /**
      * Store a newly created resource in storage.
      */

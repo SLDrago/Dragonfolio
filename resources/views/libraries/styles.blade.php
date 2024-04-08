@@ -74,4 +74,14 @@
         text-decoration: none;
         list-style-type: none;
     }
+
+    .white-btnborder {
+        border: 1px solid white;
+        width: 80%;
+    }
+
+    .method-btn {
+        width: 80%;
+        text-align: center;
+    }
 </style>
