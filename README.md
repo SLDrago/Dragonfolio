@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/SLDrago/Dragonfolio/blob/main/public/application-logo.svg" width="400" alt="Laravel Logo">
+    <img src="https://github.com/SLDrago/Dragonfolio/blob/main/public/application-logo.svg" width="300" alt="Laravel Logo">
 </p>
 
 # DragonFolio
