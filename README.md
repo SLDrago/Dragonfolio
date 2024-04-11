@@ -38,13 +38,13 @@ Follow these steps to set up and run the project on your local machine:
 
 4.  **Copy the environment file:**
 
-    - For Windows:
+    -   For Windows:
 
         ```bash
         copy .env.example .env
         ```
 
-    - For Unix/Linux/Mac:
+    -   For Unix/Linux/Mac:
 
         ```bash
         cp .env.example .env
@@ -86,11 +86,15 @@ Follow these steps to set up and run the project on your local machine:
 
 10. **Start the Laravel development server:**
 
-        ```bash
-        php artisan serve
-        ```
+    ```bash
+    php artisan serve
+    ```
 
-11. **Visit the URL shows in your terminal in your browser:**
+11. **Visit the URL shows in your terminal in your browser**
+
+12. **Add missing IMG's to the 'public/storage/images/' by creating new folders**
+
+    Modify the IMG locations as the images added to the folder.
 
 ## Contributing
 
