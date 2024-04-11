@@ -45,23 +45,23 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <form class="form-horizontal" method="POST" action="/project/store">
+                            <form class="form-horizontal" method="POST" action="/project/store/">
                                 @csrf
                                 <div class="modal-body">
                                     <div class="container">
                                         <label for="projName" class="form-label">Project Name</label>
-                                        <input type="text" id="projName" class="form-control"
+                                        <input type="text" id="projName" class="my-input"
                                             aria-describedby="projName" name="name">
                                         <label for="projDescription" class="form-label">Project
                                             Description</label>
-                                        <textarea id="projDescription" class="form-control" name="description"></textarea>
+                                        <textarea id="projDescription" class="my-input" name="description"></textarea>
                                         <label for="projUrl" class="form-label">Project URL</label>
-                                        <input type="text" id="projUrl" class="form-control"
-                                            aria-describedby="projUrl" name="project_url">
+                                        <input type="text" id="projUrl" class="my-input" aria-describedby="projUrl"
+                                            name="project_url">
                                         <label for="imgUrl" class="form-label">Project Image
                                             URL</label>
-                                        <input type="text" id="imgName" class="form-control"
-                                            aria-describedby="imgName" name="image_url">
+                                        <input type="text" id="imgName" class="my-input" aria-describedby="imgName"
+                                            name="image_url">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -117,19 +117,19 @@
                                                 <div class="modal-body">
                                                     <div class="container">
                                                         <label for="projName" class="form-label">Project Name</label>
-                                                        <input type="text" id="projName" class="form-control"
+                                                        <input type="text" id="projName" class="my-input"
                                                             aria-describedby="projName" name="name"
                                                             value="{{ $project->name }}">
                                                         <label for="projDescription" class="form-label">Project
                                                             Description</label>
-                                                        <textarea id="projDescription" class="form-control" name="description">{{ $project->description }}</textarea>
+                                                        <textarea id="projDescription" class="my-input" name="description">{{ $project->description }}</textarea>
                                                         <label for="projUrl" class="form-label">Project URL</label>
-                                                        <input type="text" id="projUrl" class="form-control"
+                                                        <input type="text" id="projUrl" class="my-input"
                                                             aria-describedby="projUrl" name="project_url"
                                                             value="{{ $project->project_url }}">
                                                         <label for="imgUrl" class="form-label">Project Image
                                                             URL</label>
-                                                        <input type="text" id="imgName" class="form-control"
+                                                        <input type="text" id="imgName" class="my-input"
                                                             aria-describedby="imgName" name="image_url"
                                                             value="{{ $project->image_url }}">
                                                     </div>
@@ -207,7 +207,7 @@
             });
             var searchInput = $('div.dataTables_filter input');
             searchInput.addClass(
-                'form-control rounded-md input'
+                'my-input rounded-md input'
             );
         });
     </script>

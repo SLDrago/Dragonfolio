@@ -9,6 +9,19 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sora:wght@100..800&display=swap');
     @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
+    .my-input {
+        appearance: none;
+        background-color: transparent !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 0.375rem !important;
+        padding: 0.75rem !important;
+        width: 100% !important;
+        font-size: 1rem !important;
+        line-height: 1.25rem !important;
+        color: #e9e9e9 !important;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+    }
+
     .sora-normal {
         font-family: "Sora", sans-serif;
         font-optical-sizing: auto;
