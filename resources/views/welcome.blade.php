@@ -382,6 +382,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <script type="text/javascript">
+        // Function to handle intersection of sections
+        const handleIntersection = (entries, observer) => {
+            entries.forEach(entry => {
+                const sectionId = entry.target.getAttribute('id');
+                const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+
+                if (entry.isIntersecting) {
+                    navLink.classList.add('active');
+                } else {
+                    navLink.classList.remove('active');
+                }
+            });
+        };
+
+        // Options for the IntersectionObserver
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        // Create the IntersectionObserver
+        const observer = new IntersectionObserver(handleIntersection, options);
+
+        // Observe each section
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => observer.observe(section));
+    </script>
+
 </body>
 
 </html>
